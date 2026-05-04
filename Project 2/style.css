@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background: #0f2f2a;
+    color: white;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* MENU */
+#menuBtn{
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: block;
+}
+
+.menu {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.menu:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.menu.active {
+    background: #0f2f2a;
+    font-weight: bold;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: #014d3b;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+/* SIDEBAR COLLAPSE */
+.sidebar.closed{
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translateX(-100%);
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px;
+}
+
+/* TOP BAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #014d3b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* TABLE */
+.table-container {
+    background: #014d3b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    color: #aaa;
+}
+
+/* status */
+.status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+/* warna ikut status */
+.status.Confirm {
+    background: #2ecc71;
+    color: #000;
+}
+
+.status.Pending {
+    background: #f1c40f;
+    color: #000;
+}
+
+.status.Check-In {
+    background: #3498db;
+}
+
+.status.Check-Out {
+    background: #68751a;
+}
+
+.status.Canceled {
+    background: #68151c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+        z-index: 1000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar.active{
+        transform: translateX(0);
+    }
+
+    /* .sidebar.closed{
+        transform: translateX(-100%);
+    } */
+
+    .main{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}

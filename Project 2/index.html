@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Ho'omaha</h2>
+        <ul>
+            <li class="menu active" data-page="dashboard">Dashboard</li>
+            <li class="menu" data-page="bookings">Bookings</li>
+            <li class="menu" data-page="guests">Guests</li>
+            <li class="menu" data-page="settings">Settings</li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <button id="menuBtn">☰</button>
+            <h1>Dashboard</h1>
+            <div class="user">Admin</div>
+        </div>
+
+        <div id="content"></div> <!--pass table content to js -->
+
+        <!-- STATS
+        <div class="stats">
+            <div class="card">Bookings<br><b>120</b></div>
+            <div class="card">Guests<br><b>80</b></div>
+            <div class="card">Revenue<br><b>$12,000</b></div>
+            <div class="card">Rooms<br><b>35</b></div>
+        </div>
+
+        TABLE
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Room</th>
+                        <th>Check-in</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingTable"></tbody>
+            </table>
+        </div> -->
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
